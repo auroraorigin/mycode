@@ -7,7 +7,6 @@
       <navigator hover-class="none">
         <image src="{{item.src}}" mode="widthFix"></image>
       </navigator>
-      
     </swiper-item>
   </swiper>
   <!-- 公告 -->
