@@ -1,0 +1,58 @@
+<view class='container'> 
+  <view class='coupon-tab'> 
+    <view>
+      <view class="{{tabIndex == 1?'active':''}}" bindtap='tabFun' data-index='1'>可用优惠券</view>
+    </view>
+    <view>
+      <view class="{{tabIndex == 2?'active':''}}" bindtap='tabFun' data-index='2'>不可用优惠券</view>
+    </view>
+  </view>
+  <scroll-view scroll-y class='list'>
+    <view class='item' wx:for="{{list}}" wx:if="{{tabIndex==1}}">
+      <view class='list_item'>
+        <view class='top'>
+          满{{item.all_money}}元减{{item.money}}元
+          <view class="top_bottom">
+            <view>
+              {{item.effective[0]}}-{{item.effective[1]}}
+            </view>
+          </view>
+        </view>
+        <view>
+          <image class='state' src='/images/personal_center/can_use.png' mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="volume_name">
+          {{item.name}}: 满{{item.all_money}}元减{{item.money}}元
+        </view>
+        <view class="button_type">
+          <text>立即使用</text>
+        </view>
+      </view>
+    </view>
+    <view class='item' wx:for="{{overList}}" wx:if="{{tabIndex==2}}">
+      <view class='list_item'>
+        <view class='top'>
+          满{{item.all_money}}元减{{item.money}}元
+          <view class="top_bottom">
+            <view>
+              {{item.effective[0]}}-{{item.effective[1]}}
+            </view>
+          </view>
+        </view>
+        <view>
+          <image class='state' src='/images/personal_center/overdue.png' mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="volume_name">
+          {{item.name}}: 满{{item.all_money}}元减{{item.money}}元
+        </view>
+        <view class="button_type1">
+          <text>不可使用</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

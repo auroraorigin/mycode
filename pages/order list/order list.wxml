@@ -1,0 +1,210 @@
+<view class="all_container">
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange"></Tabs>
+  <scroll-view scroll-y="true" class="list">
+    <view wx:if="{{tabs[0].isActive}}">
+      <view wx:if="{{!all_Order}}">
+        <image class="NoOrders" src="/images/personal_center/No_orders.jpg" mode="widthFix"></image>
+      </view>
+      <view class="item" wx:for="{{all_Order}}" wx:if="{{all_Order}}">
+        <view wx:for="{{all_Order[index].product}}">
+          <view class="list_item">
+            <view class="top">
+              <text class="text1">{{item.seller_name}}</text>
+              <text class="text2">{{item.condition}}</text>
+            </view>
+            <view class="bottom">
+              <image src="{{item.src}}" mode="widthFix" class="product_image"></image>
+              <view class="detail">
+                <view class="product_name">
+                  <text>{{item.product_name}}</text>
+                </view>
+                <view class="standard">
+                  <text>重量：{{item.standard}}</text>
+                </view>
+                <view class="money_Return">
+                  <text>{{item.money_Return}}</text>
+                </view>
+              </view>
+              <view class="product_price">
+                <view class="price">¥ {{item.price}}</view>
+                <view class="buyNumber">×{{item.buyNumber}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="second_bottom">
+          <view class="total">
+            <text>共{{item.allNumber}}件商品  合计:¥ {{item.totalPrice}}</text>
+            <view class="button_type">
+              <text>查看物流</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{tabs[1].isActive}}">
+      <view wx:if="{{!wait_Paid}}">
+        <image class="NoOrders" src="/images/personal_center/No orders.jpg" mode="widthFix"></image>
+      </view>
+      <view class="item" wx:for="{{wait_Paid}}" wx:if="{{wait_Paid}}">
+        <view wx:for="{{wait_Paid[index].product}}">
+          <view class="list_item">
+            <view class="top">
+              <text class="text1">{{item.seller_name}}</text>
+              <text class="text2">{{item.condition}}</text>
+            </view>
+            <view class="bottom">
+              <image src="{{item.src}}" mode="widthFix" class="product_image"></image>
+              <view class="detail">
+                <view class="product_name">
+                  <text>{{item.product_name}}</text>
+                </view>
+                <view class="standard">
+                  <text>重量：{{item.standard}}</text>
+                </view>
+                <view class="money_Return">
+                  <text>{{item.money_Return}}</text>
+                </view>
+              </view>
+              <view class="product_price">
+                <view class="price">¥ {{item.price}}</view>
+                <view class="buyNumber">×{{item.buyNumber}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="second_bottom">
+          <view class="total">
+            <text>共{{item.allNumber}}件商品  合计:¥ {{item.totalPrice}}</text>
+            <view class="button_type">
+              <text>确认付款</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{tabs[2].isActive}}">
+      <view wx:if="{{!wait_Sent}}">
+        <image class="NoOrders" src="/images/personal_center/No orders.jpg" mode="widthFix"></image>
+      </view>
+      <view class="item" wx:for="{{wait_Sent}}" wx:if="{{wait_Sent}}">
+        <view wx:for="{{wait_Sent[index].product}}">
+          <view class="list_item">
+            <view class="top">
+              <text class="text1">{{item.seller_name}}</text>
+              <text class="text2">{{item.condition}}</text>
+            </view>
+            <view class="bottom">
+              <image src="{{item.src}}" mode="widthFix" class="product_image"></image>
+              <view class="detail">
+                <view class="product_name">
+                  <text>{{item.product_name}}</text>
+                </view>
+                <view class="standard">
+                  <text>重量：{{item.standard}}</text>
+                </view>
+                <view class="money_Return">
+                  <text>{{item.money_Return}}</text>
+                </view>
+              </view>
+              <view class="product_price">
+                <view class="price">¥ {{item.price}}</view>
+                <view class="buyNumber">×{{item.buyNumber}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="second_bottom">
+          <view class="total">
+            <text>共{{item.allNumber}}件商品  合计:¥ {{item.totalPrice}}</text>
+            <view class="button_type">
+              <text>查看物流</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{tabs[3].isActive}}">
+      <view wx:if="{{!wait_Received}}">
+        <image class="NoOrders" src="/images/personal_center/No orders.jpg" mode="widthFix"></image>
+      </view>
+      <view class="item" wx:for="{{wait_Received}}" wx:if="{{wait_Received}}">
+        <view wx:for="{{wait_Received[index].product}}">
+          <view class="list_item">
+            <view class="top">
+              <text class="text1">{{item.seller_name}}</text>
+              <text class="text2">{{item.condition}}</text>
+            </view>
+            <view class="bottom">
+              <image src="{{item.src}}" mode="widthFix" class="product_image"></image>
+              <view class="detail">
+                <view class="product_name">
+                  <text>{{item.product_name}}</text>
+                </view>
+                <view class="standard">
+                  <text>重量：{{item.standard}}</text>
+                </view>
+                <view class="money_Return">
+                  <text>{{item.money_Return}}</text>
+                </view>
+              </view>
+              <view class="product_price">
+                <view class="price">¥ {{item.price}}</view>
+                <view class="buyNumber">×{{item.buyNumber}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="second_bottom">
+          <view class="total">
+            <text>共{{item.allNumber}}件商品  合计:¥ {{item.totalPrice}}</text>
+            <view class="button_type">
+              <text>查看物流</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{tabs[4].isActive}}">
+      <view wx:if="{{!haved_Return}}">
+        <image class="NoOrders" src="/images/personal_center/No orders.jpg" mode="widthFix"></image>
+      </view>
+      <view class="item" wx:for="{{haved_Return}}" wx:if="{{haved_Return}}">
+        <view wx:for="{{haved_Return[index].product}}">
+          <view class="list_item">
+            <view class="top">
+              <text class="text1">{{item.seller_name}}</text>
+              <text class="text2">{{item.condition}}</text>
+            </view>
+            <view class="bottom">
+              <image src="{{item.src}}" mode="widthFix" class="product_image"></image>
+              <view class="detail">
+                <view class="product_name">
+                  <text>{{item.product_name}}</text>
+                </view>
+                <view class="standard">
+                  <text>重量：{{item.standard}}</text>
+                </view>
+                <view class="money_Return">
+                  <text>{{item.money_Return}}</text>
+                </view>
+              </view>
+              <view class="product_price">
+                <view class="price">¥ {{item.price}}</view>
+                <view class="buyNumber">×{{item.buyNumber}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="second_bottom">
+          <view class="total">
+            <text>共{{item.allNumber}}件商品  合计:¥ {{item.totalPrice}}</text>
+            <view class="button_type">
+              <text>查看物流</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

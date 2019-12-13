@@ -1,0 +1,80 @@
+<view class="content"> 
+  <text class="basic_message">基本信息</text>
+  <view class="myPage">
+    <view class="list">
+      <view class="list-item" bindtap="ShowModal" data-id="0" data-title="姓名">
+        <text>姓名</text>
+        <view class="layout">
+          <text class="fill">{{content}}</text>
+          <text class="arrow1"></text>
+        </view>
+      </view>
+      <view class="list-item" bindtap="ShowModal" data-id="1" data-title="手机号">
+        <text>手机号</text>
+        <view class="layout">
+          <text class="fill">{{content1}}</text>
+          <text class="arrow1"></text>
+        </view>
+      </view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{sex}}">
+        <view class="list-item">
+          <text>性别</text>
+          <view class="layout">
+            <text class="fill">{{sex[index]}}</text>
+            <text class="arrow1"></text>
+          </view>
+        </view>
+      </picker>
+      <picker mode="date" value="{{date}}" start="1950-01-01" bindchange="bindDateChange">
+        <view class="list-item">
+          <text>生日</text>
+          <view class="layout">
+            <text class="fill">{{date}}</text>
+            <text class="arrow1"></text>
+          </view>
+        </view>
+      </picker>
+      <picker mode="region" bindchange="bindRegionChange" value="region" custom-item="{{customItem}}">
+      <view class="list-item">
+        <text>地区</text>
+        <view class="layout">
+          <text class="fill">{{region[0]}} {{region[1]}} {{region[2]}}</text>
+          <text class="arrow1"></text>
+        </view>
+      </view>
+      </picker>
+      <view class="list-item" bindtap="ShowModal" data-id="5" data-title="微信号">
+        <text>微信号</text>
+        <view class="layout">
+          <text class="fill">{{content5}}</text>
+          <text class="arrow1"></text>
+        </view>
+      </view>
+      <view class="list-item" bindtap="jumpToHarvestAddress">
+        <text>收货地址</text>
+        <view class="layout">
+          <text class="arrow1"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class="other_message">其他信息</text>
+  <view class="myPage1">
+    <view class="list">
+      <view class="list-item" bindtap="ShowModal" data-id="7" data-title="详细地址">
+        <text>详细地址</text>
+        <view class="layout">
+          <text class="fill">{{content7}}</text>
+          <text class="arrow1"></text>
+        </view>
+      </view>
+      <view class="list-item1">
+      </view>
+    </view>
+  </view>
+  <view>
+    <modal wx:for="{{ch}}" title="{{item.title}}" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindconfirm" bindcancel="modalBindcancel" class="model-type">
+      <input value="{{textmess}}" bindinput="settext" class="input_radius" type="number"></input>
+    </modal>
+  </view>
+</view>
